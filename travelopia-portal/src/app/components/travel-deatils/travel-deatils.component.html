@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="wrapper">
+        <h1>Travel Details</h1>
+        <div class="block-container" >
+            <div class="block" *ngFor="let item of travelInfo">
+                <div class="item-container">
+                    <div class="item">Name</div>
+                    <div class="value">{{item.name}}</div>
+                </div>
+                <div class="item-container">
+                    <div class="item">Email</div>
+                    <div class="value">{{item.email}}</div>
+                </div>
+                <div class="item-container">
+                    <div class="item">Country</div>
+                    <div class="value">{{item.countryId}}</div>
+                </div>
+                <div class="item-container">
+                    <div class="item">Total Persons</div>
+                    <div class="value">{{item.personsCount}}</div>
+                </div>
+                <div class="item-container">
+                    <div class="item">Budget</div>
+                    <div class="value">$ {{item.budgetPerPerson}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

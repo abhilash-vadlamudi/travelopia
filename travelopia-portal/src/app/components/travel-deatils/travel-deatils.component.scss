@@ -1,0 +1,57 @@
+@import '../../../assets/theme/travelopia-variables';
+
+.container {
+    width: auto;
+    background-color: $travelopia-palette-color-1;
+    height: calc(100vh - 64px);
+
+    .wrapper {
+        border-radius: 3px;
+        margin: 2rem;
+        h1{
+            font-family: $travelopia-heading-font;
+            text-transform: uppercase;
+            color: $travelopia-palette-color-5;
+        }
+        .block-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px; 
+            .block {
+                display: flex;
+                flex-direction: column;
+                padding: 1.5rem;
+                border-radius: 5px;
+                border-style: solid;
+                border-width: 2px;
+                border-color: $travelopia-palette-color-3;
+                box-shadow: 1px 1px $travelopia-palette-color-3;
+                .item-container{
+                    display: flex;
+                    justify-content: space-between;
+                    border-radius: 2px;
+                    padding: 0.5rem;
+                    .item{
+                        font-family: $travelopia-text-font;
+                        color: $travelopia-palette-color-5;
+                        font-size: 0.9rem;
+                        font-weight: bolder;
+                    }
+                    .value{
+                        font-family: $travelopia-text-font;
+                        color: $travelopia-palette-color-5;
+                        font-size: 0.9rem; 
+                    }
+                }
+                .item-container:nth-child(even) {
+                    background: $travelopia-palette-color-3;
+                  }
+            }
+        }
+    }
+
+
+ ::ng-deep body {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+  }
+}

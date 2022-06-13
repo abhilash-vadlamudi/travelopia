@@ -1,0 +1,126 @@
+<app-onboarding-background>
+
+  <div class="signup" role="region">
+
+    <!--Step 1 Begin-->
+    <div class="step1" role="region">
+      <div class="signup-container" role="region">
+        <div class="signup-container-header" role="heading">
+          <span>
+            <h4>{{"create-account" | translate | uppercase}}</h4>
+          </span>
+        </div>
+        <div class="signup-container-main" role="region">
+          <div class="signup-container-main-1" role="region">
+            <div class="signup-container-main-1-form" role="region">
+              <form #signupForm="ngForm" name="form" id="sign_in" method="POST" action="javascript:;" novalidate
+                (submit)="signupForm.form.valid && submitSignup();">
+
+
+                <mat-form-field class="travelopia-input" appearance="fill" *ngIf="user.business_type == 'AGENT'">
+                  <input matInput autocomplete="off" aria-label="Organisation Name" name="business_name" #business_name="ngModel"
+                    [(ngModel)]="user.business_name" required maxlength="50" size="50">
+                  <mat-label>{{"organisation-name" | translate}}</mat-label>
+                  <mat-error *ngIf="signupForm.submitted && business_name.invalid || business_name.dirty && business_name.invalid">
+                    {{"invalid-organisation-error-text" | translate}}
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="travelopia-input" appearance="fill" *ngIf="user.business_type == 'AGENT'">
+                  <input matInput autocomplete="off" aria-label="Organisation Name" name="renid" #renid="ngModel"
+                    [(ngModel)]="user.renId" required maxlength="50" size="50">
+                  <mat-label>REN Id</mat-label>
+                  <mat-error *ngIf="signupForm.submitted && renid.invalid || renid.dirty && renid.invalid">
+                    Invalid REN Id
+                  </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field class="travelopia-input" appearance="fill">
+                  <input matInput autocomplete="off" aria-label="First Name"
+                    name="first_name" #first_name="ngModel"
+                    [(ngModel)]="user.first_name" required maxlength="50" size="50">
+                  <mat-label>{{"first-name-label" | translate}}</mat-label>
+                  <mat-error *ngIf="signupForm.submitted && first_name.invalid || first_name.dirty && first_name.invalid">
+                    {{"first-name-error-text" | translate}}
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="travelopia-input" appearance="fill">
+                  <input matInput autocomplete="off"
+                    aria-label="Last Name" name="last_name" #last_name="ngModel"
+                    [(ngModel)]="user.last_name" required maxlength="50" size="50">
+                  <mat-label>{{"last-name-label" | translate}}</mat-label>
+                  <mat-error *ngIf="signupForm.submitted && last_name.invalid || last_name.dirty && last_name.invalid">
+                    {{"last-name-error-text" | translate}}
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="travelopia-input" appearance="fill">
+                  <input maxlength="100" type="email" pattern='{{emailRegex}}' matInput autocomplete="new-email"
+                    name="email" aria-label="Email"
+                    #email="ngModel" [(ngModel)]="user.email" required [email]="true">
+                  <mat-label>{{"email-label" | translate}}</mat-label>
+                  <mat-error
+                    *ngIf="signupForm.submitted && email.invalid && email.errors.required || email.dirty && email.invalid && email.errors.required">
+                    {{"email-required-error-text" | translate}}</mat-error>
+                  <mat-error
+                    *ngIf="signupForm.submitted && email.invalid && email.errors.pattern || email.dirty && email.invalid && email.errors.pattern">
+                    {{"email-not-valid-error-text" | translate}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="travelopia-input has-prefix input-text" appearance="fill">
+                  <input matInput autocomplete="off" aria-label="Mobile"
+                    onKeyDown="if(!/^-?\d+\.?\d*$/.test(event.key) && event.key != 'Backspace') return false;" size="10"
+                    length="10" maxlength="10" minlength="10" data-validate-length-range="10" name="mobile_num"
+                    [(ngModel)]="user.mobile_num" #mobile_num="ngModel" required>
+                  <mat-label>{{"mobile-label" | translate}}</mat-label>
+                  <div matPrefix role="region">+60&nbsp;</div>
+                  <mat-error
+                    *ngIf="signupForm.submitted && mobile_num.invalid || mobile_num.dirty && mobile_num.invalid">
+                    {{"mobile-error-text" | translate}}
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="travelopia-input" appearance="fill">
+                  <input matInput [type]="showPassword ? 'text' : 'password'" name="password"
+                    autocomplete="new-password" id="password" #password="ngModel" [pattern]="passwordPattern" [(ngModel)]="user.password"
+                    required minlength="8">
+                  <mat-label>{{"password-label-text" | translate}}</mat-label>
+                  <mat-icon *ngIf="user.password" matSuffix fontSet="gd" (click)="showPassword = !showPassword"
+                  [fontIcon]="showPassword ? 'gridicon-eye': 'gridicon-eye-slash'"></mat-icon>
+                  <mat-error
+                    *ngIf="signupForm.submitted && password.invalid && password.errors.required || password.dirty && password.invalid && password.errors.required">
+                    {{"password-required-error-text" | translate}}</mat-error>
+                  <mat-error
+                    *ngIf="signupForm.submitted && password.invalid && password.errors.pattern || password.dirty && password.invalid && password.errors.pattern">
+                    {{"password-valid-error-text" | translate}}</mat-error>
+                </mat-form-field>
+
+                <mat-checkbox class="travelopia-checkbox" disableRipple="true" color="primary" name="terms"
+                  #terms="ngModel" [(ngModel)]="user.terms" required>
+                  I agree to privacy policy, terms of use and for travelopia to contact me via WhatsApp about visits, rentals and reminders
+                  <mat-error *ngIf="signupForm.submitted && !user.terms || terms.dirty && !user.terms">{{"terms-n-condition-accept-text" | translate}}</mat-error>
+                </mat-checkbox>
+
+                <div class="signup-container-main-1-form-button-container travelopia-button" role="region">
+                  <button mat-flat-button type="submit" color="secondary"
+                    [disabled]="!(signupForm.form.valid && user.terms)"
+                    [class.formvalid]="signupForm.form.valid && user.terms">{{"sign-up-text" | translate}}</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="signup-container-footer" role="region">
+        <span>
+          <p>I have an account.<a class="travelopia-link" (click)="navigateToLogin()">&nbsp;Login</a></p>
+        </span>
+      </div>
+    </div>
+    <!--Step 1 End-->
+
+  </div>
+</app-onboarding-background>

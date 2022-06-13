@@ -1,0 +1,17 @@
+<mat-toolbar  class="header">
+  <div class="header-logo">
+    <button class="header-menuicon" type="button" aria-label="Toggle sidenav" mat-icon-button (click)="navigateTo('home')">
+      <img src="./assets/images/travelopia-icon.svg">
+    </button>
+  </div>
+
+  <div class="header-content">
+    <div class="header-content-item" (click)="publishDetails()">Publish Travel Data</div>
+    <div class="header-content-item" *ngIf="isLoggedIn" (click)="navigateTo('details')">View Travel Details</div>
+    <div class="header-content-item" *ngIf="!isLoggedIn" (click)="openLoginModal()">Log In</div>
+    <button *ngIf="!isLoggedIn" (click)="openSignUpModal()" class="signup-button">Sign Up</button>
+    <div class="header-content-item" *ngIf="isLoggedIn" (click)="logOut()">Logout</div>
+  </div>
+
+</mat-toolbar>
+

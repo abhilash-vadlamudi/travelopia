@@ -1,0 +1,150 @@
+@import '../../../assets/theme/travelopia-variables';
+
+.login {
+
+  position: relative;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+
+
+  &-container {
+
+    max-width: 588px;
+    width: 40.83vw;
+    background: $travelopia-palette-color-1;
+    box-shadow: 0px 0px 1.25rem rgba($travelopia-palette-color-3, 0.5);
+    border-radius: 0.625rem;
+    transition: width .35s cubic-bezier(0.075, 0.82, 0.165, 1),
+      height .35s cubic-bezier(0.075, 0.82, 0.165, 1);
+    max-width: .35s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 55%;
+      margin: auto;
+
+      &-header {
+
+        margin: 3.5rem 0 1.2rem 0;
+
+        h4 {
+          font-family: $travelopia-heading-font;
+          text-align: center;
+          font-style: normal;
+          font-weight: normal;
+          color: $travelopia-palette-color-5;
+          font-size: 1.625rem;
+          line-height: 1.947rem;
+        }
+
+      }
+
+      &-form {
+        &-button-container {
+          button {
+            width: 100%;
+            background-color: $travelopia-palette-color-2;
+            color: $travelopia-palette-color-1;
+            font-size: 1rem;
+          }
+
+          button.formvalid {
+            background-color: $travelopia-palette-color-8;
+            color: $travelopia-palette-color-1;
+          }
+        }
+      }
+
+      &-reset-container {
+        margin: 2.7rem 0 3.8rem 0;
+        text-align: center;
+
+        span {
+          font-family: $travelopia-text-font;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 1rem;
+          color: $travelopia-palette-color-6;
+        }
+      }
+    }
+
+    &-footer {
+      margin-top: 1.25rem;
+
+      span {
+        font-family: $travelopia-text-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1rem;
+        color: $travelopia-palette-color-6;
+      }
+    }
+  }
+
+}
+
+@include phone {
+  .login {
+    &-container {
+      width: 90vw;
+
+      &-main {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@include ptablet {
+  .login {
+    &-container {
+      width: 70vw;
+
+      &-main {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@include ltablet {
+  .login {
+    &-container {
+      width: 60vw;
+
+      &-main {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@include desktop{
+  .login {
+    &-container {
+      width: 40.83vw;
+
+      &-main {
+        width: 55%;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+:host ::ng-deep mat-form-field .mat-placeholder-required {
+  display: none;
+}

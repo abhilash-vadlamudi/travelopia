@@ -1,0 +1,66 @@
+@import '../../../assets/theme/travelopia-variables';
+
+.container {
+    width: auto;
+    background-color: #1F2937;
+
+    .wrapper {
+        border-radius: 3px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 6rem;
+        padding: 0 5rem;
+        .text-container{
+            width: 51%;
+            align-self: center;
+            text-align: center;
+            h1{
+                font-size: 64px;
+                font-weight: 600;
+                line-height: 1.22em;
+                color: $travelopia-palette-color-1;
+                span{
+                    color: $travelopia-palette-color-8;
+                }
+            }
+
+        }
+
+        .form-container{
+            width: 44%;
+            background-color: $travelopia-palette-color-1;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+    }
+}
+.travelopia-dialog-footer {
+    .button-container {
+      display: flex;
+      margin-top: 1rem;
+      justify-content: center;
+  
+      button {
+        font-size: 1rem;
+        border-radius: $travelopia-field-border-radius;
+        background-color: $travelopia-palette-color-2;
+        color: $travelopia-palette-color-1;
+        width: $travelopia-button-width;
+      }
+  
+      button.formvalid {
+        background-color: $travelopia-palette-color-8;
+        color: $travelopia-palette-color-1;
+        margin-right: 0.75rem;
+      }
+    }
+  }
+
+::ng-deep .travelopia-input .mat-form-field-wrapper .mat-form-field-flex {
+    background: $travelopia-palette-color-4;
+}
+
+ ::ng-deep body {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+  }

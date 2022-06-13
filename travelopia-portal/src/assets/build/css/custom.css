@@ -1,0 +1,685 @@
+html,
+body {
+    height: 100%;
+}
+
+.col-md-55,
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px
+}
+
+.row {
+    margin-right: -10px;
+    margin-left: -10px
+}
+
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+a {
+    color: #5A738E;
+    text-decoration: none
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+:visited,
+:focus,
+:active,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: 0
+}
+
+a:hover,
+a:focus {
+    text-decoration: none
+}
+
+.navbar {
+    margin-bottom: 0
+}
+
+.nav.navbar-nav>li>a {
+    color: #515356 !important
+}
+
+.nav.top_menu>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #34495E !important
+}
+
+.nav>li>a:hover,
+.nav>li>a:focus {
+    background-color: transparent
+}
+
+
+footer {
+    color: #fff;
+    padding: 15px 20px;
+    display: block;
+    background:  no-repeat center;
+    background-size: cover;
+}
+footer a{
+    color: #FFF;
+}
+
+.footer_fixed footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+@media (min-width: 768px) {
+    .footer_fixed footer {
+        margin-left: 0
+    }
+}
+
+@media (min-width: 768px) {
+    .footer_fixed .nav-sm footer {
+        margin-left: 0
+    }
+}
+
+.tile-stats.sparkline {
+    padding: 10px;
+    text-align: center
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 400
+}
+
+.list-btn-mail {
+    margin-bottom: 15px
+}
+
+.list-btn-mail.active {
+    border-bottom: 1px solid #39B3D7;
+    padding: 0 0 14px
+}
+
+.list-btn-mail>i {
+    float: left;
+    font-size: 18px;
+    font-style: normal;
+    width: 33px
+}
+
+.list-btn-mail>.cn {
+    background: none repeat scroll 0 0 #39B3D7;
+    border-radius: 12px;
+    color: #FFFFFF;
+    float: right;
+    font-style: normal;
+    padding: 0 5px
+}
+
+.button-mail {
+    margin: 0 0 15px !important;
+    text-align: left;
+    width: 100%
+}
+
+button,
+.buttons,
+.btn,
+.modal-footer .btn+.btn {
+    margin-bottom: 5px;
+    margin-right: 5px
+}
+
+.btn-group-vertical .btn,
+.btn-group .btn {
+    margin-bottom: 0;
+    margin-right: 0
+}
+
+.input-group {
+    margin-bottom: 10px
+}
+
+.ln_solid {
+    border-top: 1px solid #e5e5e5;
+    color: #ffffff;
+    background-color: #ffffff;
+    height: 1px;
+    margin: 20px 0
+}
+
+span.section {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.form-control {
+    box-shadow: none;
+    width: 100%
+}
+
+.form-horizontal .control-label {
+    padding-top: 8px
+}
+
+.form-control:focus {
+    border-color: #CCD0D7;
+    box-shadow: none !important
+}
+
+legend {
+    font-size: 18px;
+    color: inherit
+}
+
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0
+}
+
+.form-control-feedback {
+    margin-top: 8px;
+    height: 23px;
+    color: #bbb;
+    line-height: 24px;
+    font-size: 15px
+}
+
+.form-control-feedback.left {
+    border-right: 1px solid #ccc;
+    left: 13px
+}
+
+.form-control-feedback.right {
+    border-left: 1px solid #ccc;
+    right: 13px
+}
+
+.form-control.has-feedback-left {
+    padding-left: 45px
+}
+
+.form-control.has-feedback-right {
+    padding-right: 45px
+}
+
+.form-group {
+    margin-bottom: 10px
+}
+
+.validate {
+    margin-top: 10px
+}
+
+.invalid-form-error-message {
+    margin-top: 10px;
+    padding: 5px
+}
+
+.invalid-form-error-message.filled {
+    border-left: 2px solid #E74C3C
+}
+
+.item input,
+.item textarea {
+    transition: 0.42s
+}
+
+.inl-bl {
+    display: inline-block
+}
+.btn {
+    border-radius: 3px
+}
+
+a.btn-success,
+a.btn-primary,
+a.btn-warning,
+a.btn-danger {
+    color: #fff
+}
+
+.btn-success {
+    background: #26B99A;
+    border: 1px solid #169F85
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+    background: #169F85
+}
+
+.btn-dark {
+    color: #E9EDEF;
+    background-color: #4B5F71;
+    border-color: #364B5F
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active,
+.btn-dark.active,
+.open .dropdown-toggle.btn-dark {
+    color: #FFFFFF;
+    background-color: #394D5F;
+    border-color: #394D5F
+}
+
+.btn-round {
+    border-radius: 30px
+}
+
+.btn.btn-app {
+    position: relative;
+    padding: 15px 5px;
+    margin: 0 0 10px 10px;
+    min-width: 80px;
+    height: 60px;
+    box-shadow: none;
+    border-radius: 0;
+    text-align: center;
+    color: #666;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    font-size: 12px
+}
+
+.btn.btn-app>.fa,
+.btn.btn-app>.glyphicon,
+.btn.btn-app>.ion {
+    font-size: 20px;
+    display: block
+}
+
+.btn.btn-app:hover {
+    background: #f4f4f4;
+    color: #444;
+    border-color: #aaa
+}
+
+.btn.btn-app:active,
+.btn.btn-app:focus {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
+}
+
+.btn.btn-app>.badge {
+    position: absolute;
+    top: -3px;
+    right: -10px;
+    font-size: 10px;
+    font-weight: 400
+}
+
+textarea {
+    padding: 10px;
+    vertical-align: top;
+    width: 200px
+}
+
+textarea:focus {
+    outline-style: solid;
+    outline-width: 2px
+}
+
+.not_valid {
+    background: #FBD8DB !important;
+    color: #90111A !important
+}
+
+
+a:focus {
+    outline: none
+}
+
+.thumb img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%
+}
+
+.chat .thumb img {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%
+}
+
+
+.chat .media-body {
+    padding-top: 5px
+}
+
+.angular {
+    margin-top: 100px
+}
+
+.angular .chart {
+    margin-top: 0
+}
+
+ul.messages {
+    padding: 0;
+    list-style: none
+}
+
+ul.messages li,
+.tasks li {
+    border-bottom: 1px dotted #e6e6e6;
+    padding: 8px 0
+}
+
+ul.messages li img.avatar,
+img.avatar {
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    border-radius: 2px;
+    padding: 2px;
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6
+}
+
+ul.messages li .message_date {
+    float: right;
+    text-align: right
+}
+
+ul.messages li .message_wrapper {
+    margin-left: 50px;
+    margin-right: 40px
+}
+
+ul.messages li .message_wrapper h4.heading {
+    font-weight: 600;
+    margin: 0;
+    cursor: pointer;
+    margin-bottom: 10px;
+    line-height: 100%
+}
+
+ul.messages li .message_wrapper blockquote {
+    padding: 0px 10px;
+    margin: 0;
+    border-left: 5px solid #eee
+}
+
+ul.user_data li {
+    margin-bottom: 6px
+}
+
+ul.user_data li p {
+    margin-bottom: 0
+}
+
+ul.user_data li .progress {
+    width: 90%
+}
+
+.thumbnail .image {
+    height: 120px;
+    overflow: hidden
+}
+
+.thumbnail {
+    height: 190px;
+    overflow: hidden
+}
+
+
+.form-group .btn {
+    margin-bottom: -6px;
+}
+
+.input-group-btn .btn {
+    margin-bottom: 0;
+}
+
+
+.animate {
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-fill-mode: both;
+    -o-animation-duration: 0.5s;
+    -o-animation-timing-function: ease;
+    -o-animation-fill-mode: both;
+    -ms-animation-duration: 0.5s;
+    -ms-animation-timing-function: ease;
+    -ms-animation-fill-mode: both;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: both
+}
+
+.login_box {
+    padding: 20px;
+    margin: auto
+}
+
+.alignleft {
+    float: left;
+    margin-right: 15px
+}
+
+.alignright {
+    float: right;
+    margin-left: 15px
+}
+
+.clearfix:after,
+form:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+
+ul.verticle_bars {
+    width: 100%
+}
+
+ul.verticle_bars li {
+    width: 23%;
+    height: 200px;
+    margin: 0
+}
+
+.progress.vertical.progress_wide {
+    width: 35px
+}
+
+.alert-success {
+    color: #ffffff;
+    background-color: rgba(38, 185, 154, 0.88);
+    border-color: rgba(38, 185, 154, 0.88)
+}
+
+.alert-info {
+    color: #E9EDEF;
+    background-color: rgba(52, 152, 219, 0.88);
+    border-color: rgba(52, 152, 219, 0.88)
+}
+
+.alert-warning {
+    color: #E9EDEF;
+    background-color: rgba(243, 156, 18, 0.88);
+    border-color: rgba(243, 156, 18, 0.88)
+}
+
+.alert-danger,
+.alert-error {
+    color: #E9EDEF;
+    background-color: rgba(231, 76, 60, 0.88);
+    border-color: rgba(231, 76, 60, 0.88)
+}
+
+.ui-pnotify.dark .ui-pnotify-container {
+    color: #E9EDEF;
+    background-color: rgba(52, 73, 94, 0.88);
+    border-color: rgba(52, 73, 94, 0.88)
+}
+
+.fc-state-default {
+    background: #f5f5f5;
+    color: #73879C
+}
+
+.fc-state-down,
+.fc-state-active {
+    color: #333;
+    background: #ccc
+}
+
+.dropzone {
+    min-height: 300px;
+    border: 1px solid #e5e5e5
+}
+
+
+/*
+.x_content {
+    direction: rtl;
+}
+*/
+
+.main_menu .label {
+    line-height: 11px;
+    margin-top: 4px;
+}
+
+/** bootstrap-datetimepicker **/
+
+.input-group.date .input-group-addon {
+    border-radius: 0px !important;
+    background-color: #ffff !important;
+}
+
+
+/** /bootstrap-datetimepicker **/
+
+.error {
+    color: red;
+}
+
+.nav-md .container.body .right_col {
+    margin-bottom: 60px
+}
+
+.badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+.badge-warning {
+    color: #212529;
+    background-color: #ffc107;
+}
+.badge-success {
+    color: #fff;
+    background-color: #28a745;
+}
+.badge-primary {
+    color: #fff;
+    background-color: #007bff;
+}
+.badge-info {
+    color: #fff;
+    background-color: #17a2b8;
+}
+.badge {
+    cursor: pointer;
+}
+/*removing pnotfihy pause button*/
+.ui-pnotify-sticker {
+    display: none;
+}

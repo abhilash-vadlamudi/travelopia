@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="wrapper">
+        <div class="text-container">
+            <h1>ENRICHING LIVES THROUGH <span>TRAVEL</span></h1>
+
+        </div>
+
+        <div class="form-container">
+        <form #addTravellerForm="ngForm" name="form" method="POST"
+            id="property" novalidate action="javascript:;" autocomplete="off">
+            
+            <label>Name</label>
+            <mat-form-field class="travelopia-input" appearance="fill">
+                <input minlength="3" maxlength="100" matInput type="text" id="name" placeholder="Name"
+                  name="name" #name="ngModel" [(ngModel)]="travel.name" required>
+                <mat-error
+                  *ngIf="addTravellerForm.submitted && name.invalid && name.errors.required || name.dirty && name.invalid && name.errors.required">
+                  Name is Required</mat-error>
+              </mat-form-field>
+
+              <label>Email</label>
+              <mat-form-field class="travelopia-input" appearance="fill">
+                  <input minlength="3" maxlength="100" matInput pattern="{{emailRegex}}" type="text" id="email" placeholder="Email"
+                    name="email" #email="ngModel" [(ngModel)]="travel.email" required>
+                  <mat-error
+                    *ngIf="addTravellerForm.submitted && email.invalid && email.errors.required || email.dirty && email.invalid && email.errors.required">
+                    Email is Required</mat-error>
+                    <mat-error
+                    *ngIf="addTravellerForm.submitted && email.invalid && email.errors.pattern ||  email.dirty && email.invalid && email.errors.pattern">
+                    Please enter valid email.</mat-error>
+                </mat-form-field>
+
+            <label>Country</label>
+            <mat-form-field class="travelopia-input title" appearance="fill">
+                <mat-select panelClass="travelopia-select" name="countryId" required #countryId="ngModel" placeholder="country"
+                [(ngModel)]="travel.countryId">
+                <mat-option *ngFor="let country of countries" value="{{country.id}}">
+                    <div role="region">
+                    <span role="text">{{ country.name }}</span>
+                    </div>
+                </mat-option>
+                </mat-select>
+                <mat-error *ngIf="addTravellerForm.submitted && countryId.invalid || countryId.dirty && countryId.invalid">Country is required.</mat-error>
+            </mat-form-field>
+
+
+            <label>Number of Travellers</label>
+            <mat-form-field class="travelopia-input" appearance="fill">
+                <input minlength="1" maxlength="100" matInput type="text" id="count" placeholder="Travellers Count"
+                name="count" #count="ngModel" [(ngModel)]="travel.count" amountInput required>
+                <mat-error
+                  *ngIf="addTravellerForm.submitted && count.invalid && count.errors.required || count.dirty && count.invalid && count.errors.required">
+                  Number of travellers is Required</mat-error>
+              </mat-form-field>
+
+
+                <label>Budget Per Person</label>
+                <mat-form-field class="travelopia-input" appearance="fill">
+                    <input matInput amountInput type="text" id="budget" placeholder="In Dollars"
+                      name="budget" #budget="ngModel" [(ngModel)]="travel.budget" required>
+                      <mat-error
+                      *ngIf="addTravellerForm.submitted && budget.invalid && budget.errors.required || budget.dirty && budget.invalid && budget.errors.required">
+                      Budget Amount is required.</mat-error>
+                  </mat-form-field>
+
+                    <div class="travelopia-dialog-footer">
+                        <div class="button-container travelopia-button" role="region">
+                          <button mat-flat-button [disabled]="!addTravellerForm.form.valid"
+                            [class.formvalid]="addTravellerForm.form.valid" form="addTravellerForm" type="button" (click)="addTravellerForm.form.valid && addTraveller(addTravellerForm)">Add</button>
+                        </div>
+                    </div>
+            </form>
+
+        </div>
+    </div>
+</div>

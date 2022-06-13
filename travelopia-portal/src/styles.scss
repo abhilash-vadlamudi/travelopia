@@ -1,0 +1,1671 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/theme/travelopia-theme';
+
+
+@font-face {
+  font-family: "Prohibition";
+  src: url("./assets/font/Prohibition/Prohibition.otf") format("opentype")
+}
+
+
+@font-face {
+  font-family: "Prohibition-Oblique";
+  src: url('./assets/font/Prohibition/ProhibitionOblique.otf') format('opentype')
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url('./assets/font/Lato/Lato-Regular.ttf') format('truetype')
+}
+
+
+@font-face {
+  font-family: "Lato-black";
+  src: url('./assets/font/Lato/Lato-Black.ttf') format('truetype')
+}
+
+
+@font-face {
+  font-family: "Lato-bold";
+  src: url('./assets/font/Lato/Lato-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+
+@font-face {
+  font-family: "Lato-light";
+  src: url('./assets/font/Lato/Lato-Light.ttf') format('truetype')
+}
+
+
+@font-face {
+  font-family: "Lato-thin";
+  src: url('./assets/font/Lato/Lato-Thin.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  src: url('./assets/font/MaterialIcons/MaterialIcons-Regular.eot');
+  /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('./assets/font/MaterialIcons/MaterialIcons-Regular.woff2') format('woff2'),
+    url('./assets/font/MaterialIcons/MaterialIcons-Regular.woff') format('woff'),
+    url('./assets/font/MaterialIcons/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+:root {
+  --palette-color-1: #FFFFFF;
+  --palette-color-2: #E3E3E3;
+  --palette-color-3: #D7D7D7;
+  --palette-color-4: #F7F7F7;
+  --palette-color-5: #000000;
+  --palette-color-6: #474343;
+  --palette-color-7: #5C607B;
+  --palette-color-8: #FFA133;
+  --palette-color-9: #80BEC9;
+  --palette-color-10: #B6646B;
+  --palette-color-11: #FF3333;
+  --palette-color-12: #55B24D;
+  --palette-color-13: #7A7A7A;
+  --palette-color-14: #90BE6D;
+  --palette-color-15: #F9C74F;
+  --palette-color-16: #F8961E;
+  --palette-color-17: #F3722C;
+  --palette-color-18: #EC483F;
+
+}
+
+html,
+body {
+  background: $travelopia-palette-color-4;
+  height: 100%;
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", "Lato-black", "Lato-bold", "Lato-light", "Lato-thin", "Prohibition", "Prohibition-Oblique", "Helvetica Neue", sans-serif;
+}
+
+
+
+/*
+  Input box template
+  <mat-form-field class="travelopia-input [has-prefix] [has-text-suffix]" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput name="namne" [(ngModel)]="mame">
+    <!-- <div matPrefix>+44&nbsp;</div> -->
+    <!-- <span role="button" matSuffix (click)="callH()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      Edit
+    </span> -->
+    <mat-icon matSuffix>calendar_today</mat-icon>
+    <mat-error>
+      Please enter a valid email address
+    </mat-error>
+  </mat-form-field>
+*/
+
+.travelopia-input {
+  width: 100%;
+  margin-bottom: 5px;
+
+  &.mat-form-field-disabled {
+    opacity: 0.5;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0.2rem;
+
+    .mat-form-field-flex {
+      border: $travelopia-field-border solid $travelopia-palette-color-3;
+      border-radius: $travelopia-field-border-radius;
+      padding-top: 0.5rem;
+      max-height: $travelopia-field-height + (2 * $travelopia-field-border);
+
+      .mat-input-element {
+        color: $travelopia-palette-color-6;
+        //font-size: 1rem;
+      }
+
+      // default color of field label
+      .mat-form-field-label {
+        color: $travelopia-palette-color-6;
+        //font-size: 1rem;
+
+        .mat-placeholder-required {
+          display: none;
+        }
+      }
+
+      //default color of prefix and suffix
+      .mat-form-field-suffix,
+      .mat-form-field-prefix {
+        top: -2px;
+        color: $travelopia-palette-color-7;
+      }
+    }
+
+    // cancel the focus effect which shows bold underline bottom on field
+    .mat-form-field-underline::before,
+    .mat-form-field-ripple {
+      height: 0;
+    }
+
+    //select arrow icon
+    mat-select {
+      .mat-select-arrow {
+        border: 0;
+      }
+
+      .mat-select-arrow-wrapper:after {
+        font-family: 'fontawesome';
+        content: "\f078";
+        font-size: 20px;
+        color: $travelopia-palette-color-7;
+      }
+
+      .mat-option-text,
+      .mat-select-value-text {
+        color: $travelopia-palette-color-6;
+      }
+    }
+
+    //Error text left padding to be cancelled to 0. 
+    .mat-form-field-subscript-wrapper {
+      padding: 0;
+      margin-top: 0.26666667em;
+      position: relative;
+    }
+  }
+
+  //background of filters
+  &.filters {
+    .mat-form-field-wrapper {
+      .mat-form-field-flex {
+        background-color: $travelopia-palette-color-4;
+      }
+    }
+  }
+
+  //Change the label color in case the field is invalid
+  &.mat-form-field-invalid {
+    .mat-form-field-wrapper {
+      .mat-form-field-flex {
+        .mat-form-field-label {
+          color: $travelopia-palette-color-11;
+        }
+      }
+    }
+  }
+
+  //prefix area creation in case there is a prefix like phone number prefix 
+  &.input-text.has-prefix {
+    .mat-form-field-flex {
+      padding-left: 0px;
+
+      .mat-form-field-prefix {
+        padding: 1rem;
+        display: flex;
+        background: $travelopia-palette-color-4;
+        top: -0.6rem;
+        height: $travelopia-field-height;
+        align-items: center;
+        margin-right: 0.625rem;
+        border-right: 1px solid $travelopia-palette-color-3;
+        color: $travelopia-palette-color-6;
+        font-weight: normal;
+        font-style: normal;
+      }
+    }
+  }
+
+  //Change suffix color to purple gray except for text suffix(next css block)
+  .mat-form-field-suffix {
+    color: $travelopia-palette-color-7;
+  }
+
+  //Use if has a text suffix in order to align to center of field, wont work for icon suffix
+  &.input-text.has-text-suffix {
+    .mat-form-field-suffix {
+      bottom: 0.6rem;
+      color: $travelopia-palette-color-12;
+    }
+  }
+
+  //Change in label color at the time of transformation and scaling
+  &.mat-form-field-can-float {
+
+    &.mat-form-field-should-float .mat-form-field-label,
+    .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+      color: $travelopia-palette-color-7;
+      //font-size: 0.75rem;
+    }
+
+    .mat-input-server[label]:not(:label-shown)+.mat-form-field-label-wrapper .mat-form-field-label {
+      color: $travelopia-palette-color-7;
+      //font-size: 0.75rem;
+    }
+  }
+}
+
+.travelopia-input-searchfilter {
+  padding: 0 0.31rem;
+
+  @include phone {
+    padding: 0;
+  }
+
+  .mat-form-field-wrapper {
+    .mat-form-field-flex {
+      max-height : $travelopia-field-height;
+
+      .mat-form-field-suffix,
+      .mat-form-field-prefix {
+        top: -6px;
+        color: $travelopia-palette-color-7;
+  
+        .gridicon-search {
+          color: $travelopia-palette-color-7;
+          padding-right: 0.5rem;
+        }
+      }
+    }
+
+   
+  }
+}
+
+.mat-select-panel .mat-option.mat-option-disabled.mat-selected:not(.mat-option-multiple) {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.travelopia-textarea {
+  .mat-form-field-wrapper {
+
+    .mat-form-field-flex {
+      max-height: unset;
+
+      .mat-input-element {
+        outline: none;
+        resize: none;
+      }
+    }
+  }
+}
+
+.travelopia-tab-group {
+  .mat-tab-label {
+    min-width: 0;
+    font-size: 1rem;
+    padding: 0;
+    margin-right: 1.5rem;
+    opacity: 1;
+
+    &-content {
+      font-family: "Prohibition";
+      font-size: 1.25rem;
+      font-weight: normal;
+      font-style: normal;
+      color: $travelopia-palette-color-7;
+    }
+
+    &.mat-tab-label-active {
+      .mat-tab-label-content {
+        color: $travelopia-palette-color-12;
+      }
+    }
+  }
+
+  .mat-tab-links {
+    min-width: 0;
+    font-size: 1rem;
+    padding: 0;
+    margin-right: 1.5rem;
+    opacity: 1;
+
+    .mat-tab-link {
+      font-family: "Prohibition";
+      font-size: 1.25rem;
+      font-weight: normal;
+      font-style: normal;
+      color: $travelopia-palette-color-7;
+
+      &.mat-tab-label-active {
+        color: $travelopia-palette-color-12;
+      }
+    }
+  }
+}
+
+/*
+  
+*/
+.travelopia-checkbox-switch {
+  &.mat-slide-toggle {
+    width: 100px;
+    height: auto;
+  }
+
+  .mat-slide-toggle-bar {
+    width: 100px;
+    height: 50px;
+    border-radius: 30px;
+    border: 1px solid $travelopia-palette-color-3;
+    background: $travelopia-palette-color-1;
+  }
+
+
+  .mat-slide-toggle-thumb-container {
+    top: 4px;
+    left: 8px;
+
+    .mat-slide-toggle-thumb {
+      background: $travelopia-palette-color-2;
+      height: 38px;
+      width: 38px;
+      border-radius: 50%;
+    }
+
+  }
+
+  &.mat-slide-toggle .mat-slide-toggle-content {
+    position: relative;
+    font-weight: normal;
+    color: $travelopia-palette-color-6;
+    left: -50px;
+    overflow: visible;
+  }
+
+  &.mat-slide-toggle.mat-checked {
+    .mat-slide-toggle-thumb-container {
+      transform: translate3d(45px, 0, 0);
+    }
+
+    .mat-slide-toggle-thumb {
+      background: $travelopia-palette-color-12;
+    }
+
+    .mat-slide-toggle-bar {
+      background: $travelopia-palette-color-1;
+    }
+
+    .mat-slide-toggle-content {
+      left: -90px;
+    }
+  }
+
+  &.mat-slide-toggle .mat-slide-toggle-ripple {
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+  }
+
+}
+
+.travelopia-button {
+  button {
+    background-color: $travelopia-palette-color-8;
+    color: $travelopia-palette-color-1;
+    height: $travelopia-field-height;
+    border-radius: $travelopia-field-border-radius;
+
+    .mat-button-wrapper {
+      font-family: $travelopia-text-font;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 1.18rem;
+    }
+
+  }
+}
+.travelopia-filter-button {
+
+    padding: 0 0.31rem;
+    margin-bottom: 0.625rem;
+
+    &.main-filter {
+      @include phone {
+        padding: 0;
+        width: 100%;
+      }
+    }
+    
+    &.selected {
+      button {
+        background-color: $travelopia-palette-color-7;
+        color: $travelopia-palette-color-1;
+      }
+    }
+
+    &.applied {
+      button {
+        background-color: $travelopia-palette-color-12;
+        color: $travelopia-palette-color-1;
+        border: 1px solid $travelopia-palette-color-12;
+      }
+    }
+
+    button {
+      background-color: $travelopia-palette-color-4;
+      color: $travelopia-btn-color;
+      height: $travelopia-field-height;
+      border-radius: $travelopia-field-border-radius;
+      border: 1px solid $travelopia-palette-color-3;
+      min-width: 120px;
+
+      @include phone {
+        width: 100%;
+      }
+
+      .mat-button-wrapper {
+        font-family: $travelopia-text-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1rem;
+        line-height: 1.18rem;
+        text-transform: capitalize;
+
+        .main-filter-clear-icon {
+          padding-left: 0.5rem;
+          font-size: 0.8rem;
+          color: $travelopia-palette-color-4
+        }
+
+        .sub-filter-clear-icon {
+          padding-left: 0.5rem;
+          font-size: 0.8rem;
+          color: $travelopia-palette-color-4
+        }
+      }
+    }
+}
+
+
+
+.travelopia-link {
+  font-family: $travelopia-text-font;
+  font-style: normal;
+  font-weight: normal;
+  cursor: pointer;
+  color: $travelopia-palette-color-12;
+  display: inline-block;
+}
+
+.travelopia-link:hover {
+  color: $travelopia-palette-color-12;
+  text-decoration: underline;
+}
+
+.travelopia-link:visited,
+.travelopia-link:focus,
+.travelopia-link:active {
+  color: $travelopia-palette-color-12;
+}
+
+.travelopia-checkbox {
+
+  &.mat-checkbox-disabled{
+    .mat-checkbox-label {
+      opacity: 0.5;
+    }
+  }
+
+  .mat-checkbox-inner-container {
+    width: 30px;
+    height: 30px;
+
+    .mat-checkbox-frame {
+      border: 1px solid $travelopia-palette-color-3;
+      border-radius: 3px;
+    }
+  }
+
+  .mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple {
+    opacity: 0;
+  }
+
+  .mat-checkbox-layout {
+    white-space: pre-wrap;
+
+    .mat-checkbox-label {
+      margin-top: 0.1rem;
+      font-weight: normal;
+      color: $travelopia-palette-color-6;
+    }
+
+  }
+
+  .mat-error {
+    font-size: 75%;
+  }
+}
+.yonomi-button {
+  background-color: $yellow-color !important;
+  color: $travelopia-palette-color-1 !important;
+}
+.travelopia-tab-group {
+  .mat-tab-label {
+    min-width: 0;
+    font-size: 1rem;
+    padding: 0;
+    margin-right: 1.5rem;
+    opacity: 1;
+
+    &-content {
+      font-family: $travelopia-heading-font;
+      font-size: 1.25rem;
+      font-weight: normal;
+      font-style: normal;
+      color: $travelopia-palette-color-7;
+    }
+
+    &.mat-tab-label-active {
+      .mat-tab-label-content {
+        color: $travelopia-palette-color-12;
+      }
+    }
+  }
+}
+
+.travelopia-tab-group-alt {
+
+  .mat-tab-label, .mat-tab-link {
+    min-width: 0;
+    font-size: 1rem;
+    padding: 0;
+    margin-right: 1.5rem;
+    opacity: 1;
+
+    &-content {
+      font-family: $travelopia-text-font;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+      text-transform: capitalize;
+      color: $travelopia-palette-color-7;
+    }
+
+    &-active {
+      .mat-tab-label-content {
+        color: $travelopia-palette-color-12;
+      }
+    }
+
+    &.mat-tab-disabled {
+      .mat-tab-label-content {
+        color: $travelopia-palette-color-3;
+       }
+    }
+  }
+}
+
+.travelopia-button-toggle-group {
+
+  border: 1px solid $travelopia-palette-color-3;
+  border-radius: 3px;
+
+  .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    font-family: $travelopia-text-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 0 1.5rem;
+  }
+
+  .mat-button-toggle-appearance-standard {
+    color: $travelopia-palette-color-6;
+  }
+
+  .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
+    border-left: 1px solid $travelopia-palette-color-3;
+
+  }
+
+  .mat-button-toggle-checked {
+    background-color: $travelopia-palette-color-8;
+    color: $travelopia-palette-color-1;
+  }
+}
+
+.travelopia-button-toggle-group-alt1 {
+   
+
+  &-wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &.mat-button-toggle-group-appearance-standard,
+  .mat-button-toggle-standalone.mat-button-toggle-appearance-standard {
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 0.5rem;
+  }
+
+  .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    font-family: $travelopia-text-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 0 1.5rem;
+  }
+
+  .mat-button-toggle-appearance-standard {
+    color: $travelopia-palette-color-7;
+    border: 1px solid $travelopia-palette-color-7;
+    border-radius: 3px;
+    background: $travelopia-palette-color-1;
+  }
+
+  &.mat-button-toggle-group-appearance-standard .mat-button-toggle {
+    margin: 0 0.5rem 0.5rem 0;
+  }
+
+  &.mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
+    border: 1px solid $travelopia-palette-color-7;
+  }
+
+  &.mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle.mat-button-toggle-checked {
+    border: 1px solid $travelopia-palette-color-12;
+  }
+
+  
+
+  .mat-button-toggle-checked {
+    background-color: $travelopia-palette-color-12;
+    color: $travelopia-palette-color-1;
+    border: 1px solid $travelopia-palette-color-12;
+
+    .mat-button-toggle-label-content {
+      font-weight: bold;
+    }
+  }
+
+  .mat-button-toggle-appearance-standard:not(.mat-button-toggle-disabled):hover .mat-button-toggle-focus-overlay {
+    opacity: 0;
+  }
+}
+
+
+.travelopia-carousel .carousel-item {
+
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .6s ease-in-out;
+  transition: transform .6s ease-in-out;
+  transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
+  transition: display .6s ease-in-out;
+}
+
+.travelopia-carousel .carousel-item.active {
+  display: block;
+}
+
+.travelopia-carousel .carousel-control-next,
+.travelopia-carousel .carousel-control-prev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  color: $travelopia-palette-color-1;
+  text-align: center;
+  opacity: .5;
+  transition: opacity .15s ease;
+}
+
+.travelopia-carousel .carousel-control-prev {
+  left: 0;
+}
+
+.travelopia-carousel .carousel-control-next {
+  right: 0;
+}
+
+
+
+.travelopia-carousel .carousel-control-next-icon,
+.travelopia-carousel .carousel-control-prev-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: 50%/100% 100% no-repeat;
+}
+
+.travelopia-carousel .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%56b24d' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+}
+
+.travelopia-carousel .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%56b24d' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+}
+
+.cdk-overlay-container {
+  .cdk-overlay-backdrop {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  .cdk-global-overlay-wrapper {
+    .cdk-overlay-pane {
+      //overflow: auto; /*overflow is to be handled inside modal*/
+      max-width: 35vw;
+    }
+  }
+}
+
+.mat-dialog-container {
+  margin: 2rem 0;
+  border-radius: 10px !important;
+  padding: 2.5rem !important;
+  width: $travelopia-modal-width !important;
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+
+  .travelopia-dialog {
+    overflow: auto;
+    max-height: 75vh;
+    -ms-overflow-style: none;          // IE 10+    <<  removes scrollbar
+    &-header {
+      margin: 1rem 0 2rem 0;
+      text-align: center;
+      padding: 0 3.5rem;
+
+      &-title {
+        font-family: $travelopia-heading-font;
+        font-style: normal;
+        font-weight: normal;
+        color: $travelopia-palette-color-5;
+        font-size: 1.625rem;
+        line-height: 1.947rem;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+
+      &-title-sub {
+        font-family: $travelopia-text-font;
+        font-style: normal;
+        font-weight: normal;
+        color: $travelopia-palette-color-6;
+        font-size: 1rem;
+        line-height: 1.175rem;
+      }
+    }
+  }
+}
+
+.sign-up-modal {
+  .mat-dialog-container {
+    width: 700px !important;
+    height: 730px !important;
+  }
+}
+
+.login-modal {
+  .mat-dialog-container {
+    width: 630px !important;
+    height: 610px !important;
+  }
+}
+
+.successDialog {
+  .mat-dialog-container {
+    padding: 1.5625rem 2.5625rem !important;
+  }
+}
+
+.addphoto-modelContainer{
+  .mat-dialog-container {
+    width: 780px !important;
+  }
+}
+
+.travelopia-radio-group {
+
+  .mat-radio-button {
+
+    .mat-radio-label {
+
+      padding-right: 0.5rem;
+      font-weight: normal;
+      font-family: $travelopia-text-font;
+      color: $travelopia-palette-color-6;
+    }
+
+    .mat-radio-outer-circle {
+      border: 1px solid $travelopia-palette-color-3;
+    }
+
+    .mat-radio-ripple {
+      display: none;
+    }
+
+    &.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+      border-color: $travelopia-palette-color-12;
+    }
+
+    &.mat-accent .mat-radio-inner-circle,
+    &.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+    &.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+    &.mat-accent:active .mat-radio-persistent-ripple {
+      background-color: $travelopia-palette-color-12;
+    }
+
+  }
+}
+
+.travelopia-table {
+  width: 100%;
+
+  .mat-header-cell {
+    font-family: $travelopia-text-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    color: $travelopia-palette-color-6;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
+  thead {
+    border-bottom: 1px solid $travelopia-palette-color-3;
+  }
+
+  th {
+
+    .thcontent {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: flex-start;
+      justify-items: center;
+    }
+
+    &.sortheader {
+      position: relative;
+      cursor: pointer;
+
+      .thsorticon {
+        font-size: 0.6rem;
+        color: $travelopia-palette-color-7;
+        display: inline-block;
+      }
+    }
+
+    &.sortheader.sortedheader {
+
+        .thheading {
+          text-decoration: underline;
+          color: $travelopia-palette-color-5;
+        }
+
+        &.asc .thsorticon {
+          color: $travelopia-palette-color-5;
+          transform: rotate(180deg);
+        }
+
+        &.desc .thsorticon {
+          color: $travelopia-palette-color-5;
+        }
+      }
+  }
+
+  td.mat-cell:last-of-type,
+  td.mat-footer-cell:last-of-type,
+  th.mat-header-cell:last-of-type {
+    padding-right: 1.5rem;
+  }
+
+  td.mat-cell:first-of-type,
+  td.mat-footer-cell:first-of-type,
+  th.mat-header-cell:first-of-type {
+    padding-left: 1.5rem;
+  }
+
+  tbody {
+    tr {
+      height: 70px;
+
+      &:nth-child(even){
+        background: $travelopia-palette-color-1
+      }
+
+      &:nth-child(odd) {
+        background: $travelopia-palette-color-4
+      }
+
+      &:hover {
+        background-color: $travelopia-palette-color-3;
+      }
+    }
+
+    td.mat-cell {
+      font-family: $travelopia-text-font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1rem;
+      line-height: 1.1875rem;
+      border: none;
+      color: $travelopia-palette-color-6;
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+    }
+
+    td.mat-cell-bold {
+      color: $travelopia-palette-color-5;
+      font-weight: bold;
+    }
+    td{
+      a{
+        color: inherit;
+      }
+    }
+  }
+}
+
+.travelopia-slider {
+  &-property {
+    width: 100%;
+    &.mat-slider {
+      .mat-slider-wrapper {
+        height: 20px;
+      }
+      .mat-slider-track-wrapper {
+        height: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .mat-slider-track-fill {
+        height: 10px;
+        background-color: $travelopia-pricing-page-accent1;
+        border: 1px solid $travelopia-palette-color-3;
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+      }
+      .mat-slider-track-background {
+        height: 10px;
+        width: 100%;
+        transform: scaleX(1);
+        background:  #ECECEC;
+        border-radius: 10px;
+      }
+      .mat-slider-thumb, .mat-slider-thumb-label {
+        background-color: $travelopia-pricing-page-accent3;
+      }
+      .mat-slider-thumb {
+        bottom: -15px;
+        border: none;
+        width: 30px;
+        height: 30px;
+        transform: scale(1);
+      }
+    }
+  }
+  &.mat-slider {
+    .mat-slider-wrapper {
+      height: 20px;
+    }
+    .mat-slider-track-wrapper {
+      height: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .mat-slider-track-fill {
+      height: 20px;
+      background-color: $travelopia-palette-color-1;
+      border: 1px solid $travelopia-palette-color-3;
+      border-top-left-radius: 100px;
+      border-bottom-left-radius: 100px;
+    }
+    .mat-slider-track-background {
+      height: 10px;
+      width: 100%;
+      transform: scaleX(1);
+      background: $travelopia-palette-color-2;
+      border-radius: 10px;
+    }
+    .mat-slider-thumb, .mat-slider-thumb-label {
+      background-color: $travelopia-palette-color-12;;
+    }
+    .mat-slider-thumb {
+      bottom: -15px;
+      border: none;
+      width: 30px;
+      height: 30px;
+      transform: scale(1);
+    }
+  }
+}
+
+// .travelopia-header-container {
+
+//   margin: 5px 0 5px 15px;
+//   &-heading {
+//     font-family: $travelopia-heading-font;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 1.625rem;
+//     line-height: 1.93rem;
+//     color: $travelopia-palette-color-5;
+//     display: flex;
+//     align-items: center;
+
+//     &-icon {
+//       padding: 0.3rem;
+//     }
+
+//     &-text {
+//       font-style: normal;
+//       font-weight: normal;
+//       font-size: 1.625rem;
+//       line-height: 1.93rem;
+//       padding: 0.3rem;
+//       margin: 0;
+//     }
+//   }
+// }
+
+.travelopia-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  &-title {
+    font-family: $travelopia-heading-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.625rem;
+    line-height: 1.9375rem;
+    color: $travelopia-palette-color-5;
+    span {
+      padding-right: 0.75rem;
+    }
+  }
+  &-button {
+    button {
+      background-color: $travelopia-palette-color-8;
+      color: $travelopia-palette-color-1;
+      font-size: 1rem;
+      border-radius: 0;
+      line-height: 1.9375rem;
+    }
+  }
+}
+.travelopia-body {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background: $travelopia-palette-color-1;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+
+.travelopia-header-container {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 5px 0 5px 15px;
+
+  &-heading {
+    font-family: $travelopia-heading-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.625rem;
+    line-height: 1.9375rem;
+    color: $travelopia-palette-color-5;
+    display: flex;
+    align-items: center;
+    &-icon {
+      padding: 0.4rem 0.3rem 0.3rem;
+    }
+    &-text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.625rem;
+      line-height: 1.9375rem;
+      padding: 0.3rem;
+      margin: 0;
+    }
+  }
+  
+  &-right {
+    display: flex; 
+    
+    .travelopia-button:not(:last-child){
+      margin-right: 1rem;
+    }
+    
+    button {
+      background-color: $travelopia-palette-color-8;
+      color: $travelopia-palette-color-1;
+      font-size: 1rem;
+      line-height: 1.9375rem;
+    }
+    
+    button.travelopia-toggle-button {
+      background-color: $travelopia-palette-color-7;
+    }
+  }
+}
+
+.travelopia-breadcrumbs-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    color: $travelopia-palette-color-5;
+    font-size: 0.875rem;
+    margin: 1rem 0;
+
+    @include phone {
+      width: 100%;
+    }
+
+    @include ptablet {
+      width: 100%;
+    }
+
+    @include desktop {
+      width: auto;
+    }
+  
+    &-back {
+      margin: 0 2rem;
+      cursor: pointer;
+      color: $travelopia-palette-color-5;
+      &:hover, &:active {
+        color: $travelopia-palette-color-5;
+      }
+      font-weight: bold;
+      i {
+        font-size: 0.75rem;
+        color: $travelopia-palette-color-7;
+      }
+    }
+    &-title {
+      font-weight: bold;
+      margin-right: 0.1875rem;
+    }
+    &-link-list {
+      display: flex;
+      &-item {
+        color: $travelopia-palette-color-7;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover, &:active {
+          color: $travelopia-palette-color-7;
+          text-decoration: underline;
+        }
+      }
+      &-separator {
+        color: $travelopia-palette-color-7;
+        margin: 0 0.1875rem;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-right {
+    button {
+      background-color: $travelopia-palette-color-8;
+      color: $travelopia-palette-color-1;
+      font-size: 1rem;
+      line-height: 1.9375rem;
+    }
+  }
+}
+
+.travelopia-body-content {
+  margin-top: 1rem;
+
+  &-style{
+    padding: 1rem 2rem;
+    border-radius: 10px;
+  }
+  
+}
+
+.travelopia-paginator {
+  .mat-paginator-range-label {
+    margin: 0 10px 0 10px;
+  }
+}
+
+.mat-menu-panel.travelopia-menu, .mat-menu-panel.travelopia-filter-menu {
+  max-width: 320px;
+  &.notification {
+    max-width: 650px;
+    width: 650px;
+  }
+  .mat-menu-content {
+    padding: 1rem;
+  }
+
+  .filter-heading {
+    font-family: $travelopia-heading-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.625rem;
+    line-height: 1.93rem;
+    color: $travelopia-palette-color-5;
+  }
+
+  .filter-footer {
+    width: 100%;
+    button {
+      width: 100%;
+    }
+  }
+
+  .filter-main {
+    & > div {
+      display: flex;
+      flex-direction: column;
+    }
+    padding: 0.31rem;
+  }
+}
+
+.travelopia-select {
+
+  mat-option.mat-option {
+    height: 4em;
+  }
+}
+
+
+.mat-datepicker-toggle {
+  .mat-datepicker-toggle-default-icon {
+    color: $travelopia-palette-color-7;
+  }
+}
+
+.mat-calendar-body-today.mat-calendar-body-selected {
+  box-shadow: inset 0 0 0 1px $travelopia-palette-color-12;
+}
+
+
+/** Style for info popover custom **/
+
+.travelopia-info-popover.mat-menu-panel {
+  min-width: 315px;
+  max-width: 315px;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  top: 1rem;
+  box-shadow: 0px 0px 20px rgba(215, 215, 215, 0.5);
+  overflow: visible;
+
+
+  .mat-menu-content:not(:empty) {
+    padding: 0;
+  }
+
+  .mat-menu-item {
+    padding: 0;
+    height: auto;
+    line-height: normal;
+    overflow: visible;
+    text-overflow: unset;
+    cursor: default;
+  }
+  
+
+  .travelopia-popover {
+    white-space: normal;
+    padding: 1rem 1rem 1.5rem 1.5rem;
+
+    &-arrow {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      transform: rotate(45deg);
+      top: -1rem;
+      background: $travelopia-palette-color-1;
+      z-index: -1;
+    }
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      margin-bottom: 0.75rem;
+
+      &-close {
+        transform: rotate(45deg);
+        cursor: pointer;  
+      }
+      &-title {
+        font-family: $travelopia-heading-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.625rem;
+        line-height: 2rem;
+        color: $travelopia-palette-color-5;
+      }
+    }
+    &-content {
+      font-family: $travelopia-text-font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.875rem;
+      line-height: 1.0875rem;
+      color: $travelopia-palette-color-5;
+      text-align: justify;
+    }
+  }
+
+  &.mat-menu-above {
+    top: auto;
+    bottom: 1rem;
+    .travelopia-popover {
+      &-arrow {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        transform: rotate(45deg);
+        bottom: -1rem;
+        background: $travelopia-palette-color-1;
+        z-index: -1;
+        top: auto;
+      }
+    }
+  }
+}
+
+.travelopia-property-option {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+  span {
+    height: 30px;
+    line-height: 30px;
+    font-size: 1rem;
+  }
+
+  i {
+    height: 18px;
+    line-height: 18px;
+    font-size: 0.8rem;
+  }
+}
+
+/** Style for info popover custom end **/
+.travelopia-tooltip {
+
+    &-basic {
+      &.mat-tooltip {
+       white-space: pre-line;
+      }
+    }
+    &.mat-tooltip {
+        white-space: normal;
+        padding: 1rem 1.5rem;
+        font-family: $travelopia-text-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 0.875rem;
+        line-height: 1.0875rem;
+        color: $travelopia-palette-color-5;
+        background: $travelopia-palette-color-4;
+        border-radius: 1rem;
+        overflow: visible;
+        margin-bottom: 1.2rem;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 0;
+            height: 0;
+            border-top: solid 8px $travelopia-palette-color-4;
+            border-left: solid 15px transparent;
+            border-right: solid 15px transparent;
+        }
+    }
+}
+
+.travelopia-dashboard {
+  width: 100%;
+  height: 100%;
+
+  &-iframe {
+    width: 100%;
+  }
+
+  &-error {
+    height: calc(100vh - 110px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $travelopia-palette-color-7;
+
+    &-icon {
+      font-size: 3rem;
+    }
+
+    &-message {
+      text-align: center;
+    }
+  }
+}
+
+.role-select-field {
+  label {
+    color: $travelopia-palette-color-6;
+    margin-bottom: 0.75rem;
+    font-weight: normal;
+  }
+
+  &-chips {
+    &-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-chip {
+      background-color: $travelopia-palette-color-1;
+      color: $travelopia-palette-color-7;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.1875rem;
+      border: 1px solid $travelopia-palette-color-7;
+      border-radius: 3px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      cursor: pointer;
+
+      &.selected {
+        background-color: $travelopia-palette-color-12;
+        color: $travelopia-palette-color-1;
+        border: none;
+      }
+    }
+  }
+}
+
+.travelopia-file {
+
+
+  &-inputcontainer {
+    position: relative;
+    padding: 0;
+    margin: 0 0 0.8rem 0;
+    border: 1px dashed $travelopia-palette-color-3;
+    border-radius: $travelopia-field-border-radius;
+    cursor: pointer;
+
+    &-input {
+      position: relative;
+      width: 100%;
+      outline: none;
+      min-height: 50px;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    &-label {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      color: $travelopia-palette-color-5;
+      font-family: $travelopia-text-font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1rem;
+      line-height: 1.18rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0.5rem;
+      color: $travelopia-palette-color-6;
+      z-index: 0;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    &-actioncontainer {
+     display: flex;
+     flex-direction: column;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     position: absolute;
+     text-align: center;
+     cursor: pointer;
+
+     &-button, &.mat-flat-button {
+         background-color: $travelopia-palette-color-8;
+         color: $travelopia-palette-color-1;
+         height: $travelopia-field-height;
+         border-radius: $travelopia-field-border-radius;
+
+         .mat-button-wrapper {
+           font-family: $travelopia-text-font;
+           font-style: normal;
+           font-weight: bold;
+           font-size: 1rem;
+           line-height: 1.18rem;
+         }
+       }
+       &-label {
+        color: $travelopia-palette-color-5;
+        font-family: $travelopia-text-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1rem;
+        line-height: 1.18rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0.5rem;
+        color: $travelopia-palette-color-6;
+        z-index: 0;
+        text-align: center;
+        cursor: pointer;
+       }
+     }    
+   }
+
+  &-cardarea {
+    margin-bottom: 1rem;
+
+    &-file {
+      background: $travelopia-palette-color-1;
+      border: 1px solid $travelopia-palette-color-3;
+      height: 50px;
+      display: flex;
+      padding: 0 1.25rem;
+      border-radius: $travelopia-field-border-radius;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      &-left {
+        width: calc(( 100% - 1.25rem * 2) * 0.85);
+        display: flex;
+        align-items: center;
+        color: $travelopia-palette-color-6;
+
+        i {
+          margin-right: 0.75rem;
+          color: $travelopia-palette-color-5;
+        }
+
+        &-name {
+          width: 100%;
+          padding: 0.2rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &-right {
+        display: flex;
+        justify-content: flex-end;
+        width: calc( 100% - 1.25rem * 2) ;
+        align-items: center;
+
+        &-action {
+          color: $travelopia-palette-color-12;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        &-action.uploaded {
+          color: $travelopia-palette-color-2;
+        }
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,94 @@
+@import '../../../assets/theme/travelopia-variables';
+
+.signup {
+
+  position: relative;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -0.5rem;
+
+
+  &-container {
+    background: $travelopia-palette-color-1;
+    box-shadow: 0px 0px 1.25rem rgba($travelopia-palette-color-3, 0.5);
+    border-radius: 0.625rem;
+    transition: width .35s cubic-bezier(0.075, 0.82, 0.165, 1),
+      height .35s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &-main {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      &-1 {
+        transition: display .35s cubic-bezier(0.075, 0.82, 0.165, 1);
+        width: 70%;
+      }
+    }
+
+    &-main-1-form,
+    &-verify-form {
+
+      &-button-container {
+        margin-top: 1rem;
+
+        button {
+          width: 100%;
+          background-color: $travelopia-palette-color-2;
+          color: $travelopia-palette-color-1;
+          font-size: 1rem;
+        }
+
+        button.formvalid {
+          background-color: $travelopia-palette-color-8;
+          color: $travelopia-palette-color-1;
+        }
+      }
+    }
+
+    &-header,
+    &-footer {
+      padding: 1rem 1rem;
+      width: 100%;
+      text-align: center;
+  
+
+      span {
+        font-family: $travelopia-text-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1rem;
+        line-height: 1.18rem;
+        color: $travelopia-palette-color-6;
+      }
+    }
+
+}
+
+
+
+:host ::ng-deep mat-form-field .mat-placeholder-required {
+  display: none;
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}

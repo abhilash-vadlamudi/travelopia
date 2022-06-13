@@ -1,0 +1,36 @@
+@import '../../../../assets/theme/travelopia-variables';
+
+@mixin ModalButton($color) {
+  background-color: $color;
+  width: 35%;
+  border: none;
+}
+
+.confirm-modal {
+  &-title {
+    font-family: $travelopia-heading-font;
+    text-transform: uppercase;
+    color: $travelopia-palette-color-5;
+  }
+
+  &-text {
+    margin: 1.6rem 0;
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  &-button-container {
+    justify-content: center;
+  }
+
+  &-confirm-button {
+    @include ModalButton($travelopia-palette-color-8);
+  }
+
+  &-cancel-button {
+    @include ModalButton($travelopia-palette-color-7);
+    margin-left: 0.5rem;
+  }
+}

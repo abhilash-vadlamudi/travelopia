@@ -1,0 +1,308 @@
+/* You can add global style variables to this file */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import './travelopia-variables';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+//travelopia color pallete #55B24D
+$travelopia-primary: (50 : var(--palette-color-12-50, #ebf6ea),
+  100 : var(--palette-color-12-100, #cce8ca),
+  200 : var(--palette-color-12-200, #aad9a6),
+  300 : var(--palette-color-12-300, #88c982),
+  400 : var(--palette-color-12-400, #6fbe68),
+  500 : var(--palette-color-12-500, #55b24d),
+  600 : var(--palette-color-12-600, #4eab46),
+  700 : var(--palette-color-12-700, #44a23d),
+  800 : var(--palette-color-12-800, #3b9934),
+  900 : var(--palette-color-12-900, #2a8a25),
+  A100 : var(--palette-color-12-A100, #ccffc9),
+  A200 : var(--palette-color-12-A200, #9cff96),
+  A400 : var(--palette-color-12-A400, #6bff63),
+  A700 : var(--palette-color-12-A700, #53ff4a),
+  contrast: (50 : var(--palette-color-12-contrast-50, #000000),
+    100 : var(--palette-color-12-contrast-100, #000000),
+    200 : var(--palette-color-12-contrast-200, #000000),
+    300 : var(--palette-color-12-contrast-300, #000000),
+    400 : var(--palette-color-12-contrast-400, #000000),
+    500 : var(--palette-color-12-contrast-500, #000000),
+    600 : var(--palette-color-12-contrast-600, #000000),
+    700 : var(--palette-color-12-contrast-700, #ffffff),
+    800 : var(--palette-color-12-contrast-800, #ffffff),
+    900 : var(--palette-color-12-contrast-900, #ffffff),
+    A100 : var(--palette-color-12-contrast-A100, #000000),
+    A200 : var(--palette-color-12-contrast-A200, #000000),
+    A400 : var(--palette-color-12-contrast-A400, #000000),
+    A700 : var(--palette-color-12-contrast-A700, #000000),
+  ));
+
+//travelopia secondary color pallete #FFA133
+$travelopia-secondary: (50 : var(--palette-color-8-50, #fff4e7),
+  200 : var(--palette-color-8-200, #ffd099),
+  100 : var(--palette-color-8-100, #ffe3c2),
+  300 : var(--palette-color-8-300, #ffbd70),
+  400 : var(--palette-color-8-400, #ffaf52),
+  500 : var(--palette-color-8-500, #ffa133),
+  600 : var(--palette-color-8-600, #ff992e),
+  700 : var(--palette-color-8-700, #ff8f27),
+  800 : var(--palette-color-8-800, #ff8520),
+  900 : var(--palette-color-8-900, #ff7414),
+  A100 : var(--palette-color-8-A100, #ffffff),
+  A200 : var(--palette-color-8-A200, #fffcfb),
+  A400 : var(--palette-color-8-A400, #ffdcc8),
+  A700 : var(--palette-color-8-A700, #ffccae),
+  contrast: (50 : var(--palette-color-8-contrast-50, #000000),
+    100 : var(--palette-color-8-contrast-100, #000000),
+    200 : var(--palette-color-8-contrast-200, #000000),
+    300 : var(--palette-color-8-contrast-300, #000000),
+    400 : var(--palette-color-8-contrast-400, #000000),
+    500 : var(--palette-color-8-contrast-500, #000000),
+    600 : var(--palette-color-8-contrast-600, #000000),
+    700 : var(--palette-color-8-contrast-700, #000000),
+    800 : var(--palette-color-8-contrast-800, #000000),
+    900 : var(--palette-color-8-contrast-900, #000000),
+    A100 : var(--palette-color-8-contrast-A100, #000000),
+    A200 : var(--palette-color-8-contrast-A200, #000000),
+    A400 : var(--palette-color-8-contrast-A400, #000000),
+    A700 : var(--palette-color-8-contrast-A700, #000000),
+  ));
+
+// travelopia text 1 color #474343
+$travelopia-text-1: (50 : var(--palette-color-6-50, #e9e8e8),
+  100 : var(--palette-color-6-100, #c8c7c7),
+  200 : var(--palette-color-6-200, #a3a1a1),
+  300 : var(--palette-color-6-300, #7e7b7b),
+  400 : var(--palette-color-6-400, #635f5f),
+  500 : var(--palette-color-6-500, #474343),
+  600 : var(--palette-color-6-600, #403d3d),
+  700 : var(--palette-color-6-700, #373434),
+  800 : var(--palette-color-6-800, #2f2c2c),
+  900 : var(--palette-color-6-900, #201e1e),
+  A100 : var(--palette-color-6-A100, #f47676),
+  A200 : var(--palette-color-6-A200, #f14646),
+  A400 : var(--palette-color-6-A400, #ff0505),
+  A700 : var(--palette-color-6-A700, #eb0000),
+  contrast: (50 : var(--palette-color-6-contrast-50, #000000),
+    100 : var(--palette-color-6-contrast-100, #000000),
+    200 : var(--palette-color-6-contrast-200, #000000),
+    300 : var(--palette-color-6-contrast-300, #ffffff),
+    400 : var(--palette-color-6-contrast-400, #ffffff),
+    500 : var(--palette-color-6-contrast-500, #ffffff),
+    600 : var(--palette-color-6-contrast-600, #ffffff),
+    700 : var(--palette-color-6-contrast-700, #ffffff),
+    800 : var(--palette-color-6-contrast-800, #ffffff),
+    900 : var(--palette-color-6-contrast-900, #ffffff),
+    A100 : var(--palette-color-6-contrast-A100, #000000),
+    A200 : var(--palette-color-6-contrast-A200, #ffffff),
+    A400 : var(--palette-color-6-contrast-A400, #ffffff),
+    A700 : var(--palette-color-6-contrast-A700, #ffffff),
+  ));
+
+// travelopia text 2 color #D7D7D7
+$travelopia-text-2: (50 : var(--palette-color-3-50, #FAFAFA),
+  100 : var(--palette-color-3-100, #F3F3F3),
+  200 : var(--palette-color-3-200, #EBEBEB),
+  300 : var(--palette-color-3-300, #E3E3E3),
+  400 : var(--palette-color-3-400, #DDDDDD),
+  500 : var(--palette-color-3-500, #D7D7D7),
+  600 : var(--palette-color-3-600, #D3D3D3),
+  700 : var(--palette-color-3-700, #CDCDCD),
+  800 : var(--palette-color-3-800, #C7C7C7),
+  900 : var(--palette-color-3-900, #BEBEBE),
+  A100 : var(--palette-color-3-A100, #FFFFFF),
+  A200 : var(--palette-color-3-A200, #FFFFFF),
+  A400 : var(--palette-color-3-A400, #FFFFFF),
+  A700 : var(--palette-color-3-A700, #FFFFFF),
+  contrast: (50 : var(--palette-color-3-contrast-50, #000000),
+    100 : var(--palette-color-3-contrast-100, #000000),
+    200 : var(--palette-color-3-contrast-200, #000000),
+    300 : var(--palette-color-3-contrast-300, #000000),
+    400 : var(--palette-color-3-contrast-400, #000000),
+    500 : var(--palette-color-3-contrast-500, #000000),
+    600 : var(--palette-color-3-contrast-600, #000000),
+    700 : var(--palette-color-3-contrast-700, #ffffff),
+    800 : var(--palette-color-3-contrast-800, #ffffff),
+    900 : var(--palette-color-3-contrast-900, #ffffff),
+    A100 : var(--palette-color-3-contrast-A100, #000000),
+    A200 : var(--palette-color-3-contrast-A200, #000000),
+    A400 : var(--palette-color-3-contrast-A400, #000000),
+    A700 : var(--palette-color-3-contrast-A700, #000000),
+  ));
+
+//travelopia text 3 color #5C607B
+$travelopia-text-3: (50 : var(--palette-color-7-50, #EBECEF),
+  100 : var(--palette-color-7-100, #CECFD7),
+  200 : var(--palette-color-7-200, #AEB0BD),
+  300 : var(--palette-color-7-300, #8D90A3),
+  400 : var(--palette-color-7-400, #74788F),
+  500 : var(--palette-color-7-500, #5C607B),
+  600 : var(--palette-color-7-600, #545873),
+  700 : var(--palette-color-7-700, #4A4E68),
+  800 : var(--palette-color-7-800, #41445E),
+  900 : var(--palette-color-7-900, #30334B),
+  A100 : var(--palette-color-7-A100, #9BA6FF),
+  A200 : var(--palette-color-7-A200, #6879FF),
+  A400 : var(--palette-color-7-A400, #354CFF),
+  A700 : var(--palette-color-7-A700, #1B35FF),
+  contrast: (50 : var(--palette-color-7-contrast-50, #000000),
+    100 : var(--palette-color-7-contrast-100, #000000),
+    200 : var(--palette-color-7-contrast-200, #000000),
+    300 : var(--palette-color-7-contrast-300, #000000),
+    400 : var(--palette-color-7-contrast-400, #000000),
+    500 : var(--palette-color-7-contrast-500, #000000),
+    600 : var(--palette-color-7-contrast-600, #ffffff),
+    700 : var(--palette-color-7-contrast-700, #ffffff),
+    800 : var(--palette-color-7-contrast-800, #ffffff),
+    900 : var(--palette-color-7-contrast-900, #ffffff),
+    A100 : var(--palette-color-7-contrast-A100, #000000),
+    A200 : var(--palette-color-7-contrast-A200, #000000),
+    A400 : var(--palette-color-7-contrast-A400, #000000),
+    A700 : var(--palette-color-7-contrast-A700, #ffffff),
+  ));
+
+
+//travelopia-inactive #E3E3E3
+$travelopia-inactive: (50 : var(--palette-color-2-50, #fcfcfc),
+  100 : var(--palette-color-2-100, #f7f7f7),
+  200 : var(--palette-color-2-200, #f1f1f1),
+  300 : var(--palette-color-2-300, #ebebeb),
+  400 : var(--palette-color-2-400, #e7e7e7),
+  500 : var(--palette-color-2-500, #e3e3e3),
+  600 : var(--palette-color-2-600, #e0e0e0),
+  700 : var(--palette-color-2-700, #dcdcdc),
+  800 : var(--palette-color-2-800, #d8d8d8),
+  900 : var(--palette-color-2-900, #d0d0d0),
+  A100 : var(--palette-color-2-A100, #ffffff),
+  A200 : var(--palette-color-2-A200, #ffffff),
+  A400 : var(--palette-color-2-A400, #ffffff),
+  A700 : var(--palette-color-2-A700, #ffffff),
+  contrast: (50 : var(--palette-color-2-contrast-50, #000000),
+    100 : var(--palette-color-2-contrast-100, #000000),
+    200 : var(--palette-color-2-contrast-200, #000000),
+    300 : var(--palette-color-2-contrast-300, #000000),
+    400 : var(--palette-color-2-contrast-400, #000000),
+    500 : var(--palette-color-2-contrast-500, #000000),
+    600 : var(--palette-color-2-contrast-600, #000000),
+    700 : var(--palette-color-2-contrast-700, #000000),
+    800 : var(--palette-color-2-contrast-800, #000000),
+    900 : var(--palette-color-2-contrast-900, #000000),
+    A100 : var(--palette-color-2-contrast-A100, #000000),
+    A200 : var(--palette-color-2-contrast-A200, #000000),
+    A400 : var(--palette-color-2-contrast-A400, #000000),
+    A700 : var(--palette-color-2-contrast-A700, #000000),
+  ));
+
+//travelopia-inactive #F7F7F7
+$travelopia-secondary-background: (50 : var(--palette-color-4-50, #FEFEFE),
+  100 : var(--palette-color-4-100, #FDFDFD),
+  200 : var(--palette-color-4-200, #FBFBFB),
+  300 : var(--palette-color-4-300, #F9F9F9),
+  400 : var(--palette-color-4-400, #F8F8F8),
+  500 : var(--palette-color-4-500, #F7F7F7),
+  600 : var(--palette-color-4-600, #F6F6F6),
+  700 : var(--palette-color-4-700, #F5F5F5),
+  800 : var(--palette-color-4-800, #F3F3F3),
+  900 : var(--palette-color-4-900, #F1F1F1),
+  A100 : var(--palette-color-4-A100, #FFFFFF),
+  A200 : var(--palette-color-4-A200, #FFFFFF),
+  A400 : var(--palette-color-4-A400, #FFFFFF),
+  A700 : var(--palette-color-4-A700, #FFFFFF),
+  contrast: (50 : var(--palette-color-4-contrast-50, #000000),
+    100 : var(--palette-color-4-contrast-100, #000000),
+    200 : var(--palette-color-4-contrast-200, #000000),
+    300 : var(--palette-color-4-contrast-300, #000000),
+    400 : var(--palette-color-4-contrast-400, #000000),
+    500 : var(--palette-color-4-contrast-500, #000000),
+    600 : var(--palette-color-4-contrast-600, #000000),
+    700 : var(--palette-color-4-contrast-700, #000000),
+    800 : var(--palette-color-4-contrast-800, #000000),
+    900 : var(--palette-color-4-contrast-900, #000000),
+    A100 : var(--palette-color-4-contrast-A100, #000000),
+    A200 : var(--palette-color-4-contrast-A200, #000000),
+    A400 : var(--palette-color-4-contrast-A400, #000000),
+    A700 : var(--palette-color-4-contrast-A700, #000000),
+  ));
+
+$travelopia-primary-palette: mat-palette($travelopia-primary);
+$travelopia-secondary-palette: mat-palette($travelopia-secondary);
+$travelopia-text-palette-1: mat-palette($travelopia-text-1);
+$travelopia-text-palette-2: mat-palette($travelopia-text-2);
+$travelopia-text-palette-3: mat-palette($travelopia-text-3);
+$travelopia-inactive-palette: mat-palette($travelopia-inactive);
+$travelopia-secondary-background-palette: mat-palette($travelopia-secondary-background);
+
+//Overriding create theme function
+// Foreground palette for light themes.
+$travelopia-light-theme-foreground: (base: white,
+  divider: $dark-dividers,
+  dividers: $dark-dividers,
+  disabled: $travelopia-palette-color-2,
+  disabled-button: $travelopia-palette-color-2,
+  disabled-text: $travelopia-palette-color-2,
+  elevation: black,
+  hint-text: $travelopia-palette-color-2,
+  secondary-text: $travelopia-palette-color-6,
+  icon: rgba(black, 0.54),
+  icons: rgba(black, 0.54),
+  text: $travelopia-palette-color-7,
+  slider-min: rgba(black, 0.87),
+  slider-off: rgba(black, 0.26),
+  slider-off-active: rgba(black, 0.38),
+);
+
+// Background palette for light themes.
+$travelopia-light-theme-background: (status-bar: map_get($mat-grey, 300),
+  app-bar: map_get($mat-grey, 100),
+  background: map_get($mat-grey, 50),
+  hover: rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+  card: white,
+  dialog: white,
+  disabled-button: rgba(black, 0.12),
+  raised-button: white,
+  focused-button: $dark-focused,
+  selected-button: map_get($mat-grey, 300),
+  selected-disabled-button: map_get($mat-grey, 400),
+  disabled-button-toggle: map_get($mat-grey, 200),
+  unselected-chip: map_get($mat-grey, 300),
+  disabled-list-option: map_get($mat-grey, 200),
+);
+
+
+@function create-travelopia-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  @return (primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: false,
+    foreground: $travelopia-light-theme-foreground,
+    background: $travelopia-light-theme-background,
+  );
+}
+
+
+// Create the theme object (a Sass map containing all of the palettes).
+//Theme for global application
+$travelopia-theme: create-travelopia-theme($travelopia-primary-palette, $travelopia-secondary-palette);
+
+@include angular-material-theme($travelopia-theme);
+
+//Theme for input
+$travelopia-form-input-theme: create-travelopia-theme($travelopia-text-palette-3, $travelopia-text-palette-1);
+
+@include mat-form-field-theme($travelopia-form-input-theme);
+@include mat-input-theme($travelopia-form-input-theme);
+
+//Theme for form-field
+$travelopia-form-field-fill-theme: create-travelopia-theme($travelopia-text-palette-3, $travelopia-text-palette-1);
+
+@include mat-form-field-theme($travelopia-form-field-fill-theme);
+@include mat-form-field-fill-theme($travelopia-form-field-fill-theme);

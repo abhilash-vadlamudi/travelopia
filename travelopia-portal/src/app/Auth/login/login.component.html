@@ -1,0 +1,96 @@
+<app-onboarding-background>
+  <div class="login" role="region">
+    <div class="login-container" role="region">
+      <div class="login-container-main" role="region">
+        <div class="login-container-main-header" role="region">
+          <span>
+            <h4>LOGIN</h4>
+          </span>
+        </div>
+        <div class="login-main-form" role="region">
+          <form #loginForm="ngForm" name="form" id="sign_in" method="POST" action="javascript:;" novalidate
+            (submit)="loginForm.form.valid && submitLogin()">
+            <mat-form-field class="travelopia-input" appearance="fill">
+              <input matInput aria-label="Email" name="username"
+                (keyup)="checkValid($event, username.value)" (change)="isValid(username.value)" #username="ngModel"
+                [(ngModel)]="loginValue.username" required autocomplete="off">
+              <mat-label>Email</mat-label>
+              <mat-error *ngIf="emailError">
+                Please enter a valid email!
+              </mat-error>
+              <mat-error *ngIf="mobileError">
+                Please enter a valid mobile!
+              </mat-error>
+              <mat-error *ngIf="loginForm.submitted && username.invalid || username.dirty && username.invalid">
+                Please enter a valid email/mobile.
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="travelopia-input" appearance="fill">
+              <input matInput [type]="showPassword ? 'text' : 'password'" aria-label="Password" #password="ngModel"
+                [(ngModel)]="loginValue.password" name="password" required autocomplete="off">
+              <mat-label>Password</mat-label>
+              <mat-icon *ngIf="loginValue.password" matSuffix fontSet="gd" (click)="showPassword = !showPassword"
+                [fontIcon]="showPassword ? 'gridicon-eye': 'gridicon-eye-slash'"></mat-icon>
+
+              <mat-error *ngIf="loginForm.submitted && password.invalid || password.dirty && password.invalid">
+                Please enter a valid password.
+              </mat-error>
+            </mat-form-field>
+            <div class="login-container-main-form-button-container travelopia-button" role="region">
+              <button mat-flat-button type="submit" color="secondary"
+                [class.formvalid]="loginForm.form.valid" [disabled]="!loginForm.form.valid">Login</button>
+            </div>
+          </form>
+          <div class="login-container-main-reset-container" role="region">
+            <span>
+              <p>I can’t sign in.<a class="travelopia-link" href="javascript:;" (click)="openForgotPasswordModal()">&nbsp; {{ "reset-my-password" | translate }}</a></p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="login-container-footer" role="region">
+      <span>
+        <p>I need an account.<a class="travelopia-link" (click)="navigateToSignup()">&nbsp;Join</a></p>
+      </span>
+    </div>
+  </div>
+</app-onboarding-background>
+
+<div class="modal fade responses" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        
+        <h4 class="modal-title" id="myModalLabel">Verify Account</h4>
+      </div>
+      <div class="modal-body">
+        <form id="verifyAccount" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Verifiction code <span
+                class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" id="first-name" #code required="required" class="form-control col-md-7 col-xs-12">
+              <a href="javascript:;" (click)="resend()">Resend verification code</a>
+            </div>
+          </div>
+          <div class="ln_solid"></div>
+          <div class="form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+              <button type="button" (click)="verify(code.value)" class="btn btn-success">Verify</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ 

@@ -1,0 +1,92 @@
+//palette color
+$travelopia-palette-color-1: var(--palette-color-1, #FFFFFF);
+$travelopia-palette-color-2: var(--palette-color-2, #E3E3E3);
+$travelopia-palette-color-3: var(--palette-color-3, #D7D7D7);
+$travelopia-palette-color-4: var(--palette-color-4, #F7F7F7);
+$travelopia-palette-color-5: var(--palette-color-5, #000000);
+$travelopia-palette-color-6: var(--palette-color-6, #474343);
+$travelopia-palette-color-7: var(--palette-color-7, #5C607B);
+$travelopia-palette-color-8: var(--palette-color-8, #FFA133);
+$travelopia-palette-color-9: var(--palette-color-9, #80BEC9);
+$travelopia-palette-color-10: var(--palette-color-10, #B6646B);
+$travelopia-palette-color-11: var(--palette-color-11, #FF3333);
+$travelopia-palette-color-12: var(--palette-color-12, #55B24D);
+$travelopia-palette-color-13: var(--palette-color-13, #7A7A7A);
+$travelopia-palette-color-14: var(--palette-color-14, #90BE6D);
+$travelopia-palette-color-15: var(--palette-color-15, #F9C74F);
+$travelopia-palette-color-16: var(--palette-color-16, #F8961E);
+$travelopia-palette-color-17: var(--palette-color-17, #F3722C);
+$travelopia-palette-color-18: var(--palette-color-18, #EC483F);
+
+
+$travelopia-btn-color: #545454;
+$yellow-color: #FBE337;
+
+
+
+/*****************Box values***********************/
+$travelopia-field-border-radius: 3px;
+$travelopia-field-height: 50px;
+$travelopia-field-border: 1px;
+$travelopia-modal-width: 600px;
+$travelopia-button-width: 180px;
+$travelopia-button-height: 50px;
+$travelopia-button-medium-width: 148px;
+$travelopia-button-small-width: 100px;
+$community-list-item-height: 96px;
+$community-post-item-height: 77px;
+
+
+/*****************Fonts***********************/
+$travelopia-heading-font: Prohibition;
+$travelopia-text-font: Lato;
+
+// Pricing Page
+$travelopia-pricing-page-accent1: #C0C4D9;
+$travelopia-pricing-page-accent2: #D5D8E8;
+$travelopia-pricing-page-accent3: #6672C2;
+
+
+$phones-width: 600px; //Extra small devices (phones, 600px and down)
+$portraitablet-width: 600px; // Small devices (portrait tablets and large phones, 600px and up) 
+$landscapetablet-width: 768px; //Medium devices (landscape tablets, 768px and up)
+$desktop-width: 992px; //Large devices (laptops/desktops, 992px and up)
+$largedesktop-width: 1200px;
+$xdesktop-width: 1500px;
+
+@mixin phone {
+  @media only screen and (max-width: #{$phones-width}) {
+    @content;
+  }
+}
+
+@mixin ptablet {
+  @media only screen and (min-width: #{$portraitablet-width}) {
+    @content;
+  }
+}
+
+@mixin ltablet {
+  @media only screen and (min-width: #{$landscapetablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
+@mixin ldesktop {
+  @media only screen and (min-width: #{$largedesktop-width}) {
+    @content;
+  }
+}
+
+@mixin xdesktop {
+  @media only screen and (min-width: #{$xdesktop-width}) {
+    @content;
+  }
+}

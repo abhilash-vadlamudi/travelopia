@@ -1,0 +1,10 @@
+<div class="confirm-modal" role="region">
+  <h2 mat-dialog-title align="center" class="confirm-modal-title">{{ title }}</h2>
+  <mat-dialog-content class="confirm-modal-text" align="center">
+    <h4>{{ text }}</h4>
+  </mat-dialog-content>
+  <mat-dialog-actions class="confirm-modal-button-container travelopia-button">
+    <button [mat-dialog-close]="true" class="confirm-modal-confirm-button {{ thirdPartyButtonClass }}">{{ confirmBtnText }}</button>
+    <button *ngIf="!hideCancelBtn" mat-dialog-close class="confirm-modal-cancel-button">{{ cancelBtnText }}</button>
+  </mat-dialog-actions>
+</div>

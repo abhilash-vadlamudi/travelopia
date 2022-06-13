@@ -1,0 +1,6 @@
+@import '../assets/theme/travelopia-variables';
+:host ::ng-deep {
+  body {
+    background: $travelopia-palette-color-1;
+  }
+}
