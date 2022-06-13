@@ -1,0 +1,29 @@
+{
+  "name": "insta-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@typeform/api-client": "^1.6.8",
+    "body-parser": "^1.18.2",
+    "cls-hooked": "^4.2.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.2",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "mysql2": "^2.3.3",
+    "request": "^2.88.2",
+    "sequelize": "^6.5.0",
+    "locutus": "^2.0.10",
+    "mustache": "^3.1.0",
+    "nodemailer": "^4.6.7"
+  }
+}
