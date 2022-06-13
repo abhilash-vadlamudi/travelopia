@@ -1,7 +1,7 @@
 
 [![N|Solid](https://www.drupal.org/files/styles/grid-4-2x/public/travelopia_logo.png?itok=ljzwrdLC)](https://nodesource.com/products/nsolid)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=main)](https://github.com/abhilash-vadlamudi/travelopia)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/abhilash-vadlamudi/travelopia)
 
 Angular-powered with NodeJs backend
 
